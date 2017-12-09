@@ -9,11 +9,11 @@ import { Topping } from '../models/topping.model';
 
 @Injectable()
 export class ToppingsService {
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
-  getToppings(): Observable<Topping[]> {
-    return this.http
-      .get<Topping[]>(`/api/toppings`)
-      .pipe(catchError((error: any) => Observable.throw(error.json())));
-  }
+    getToppings(): Observable<Topping[]> {
+        return this.http
+            .get<Topping[]>(`/api/toppings`)
+            .pipe(catchError((error: any) => Observable.throw(error.json())));
+    }
 }
